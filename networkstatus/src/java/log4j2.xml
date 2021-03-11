@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="Log4jUtil" packages="com.project.util">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="File" fileName="/opt/logs/example.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>  
+        
+        <!--<RollingFile name="RollingFile" fileName="D:/log/app.log" filePattern="D:/log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">--> 
+        <RollingFile name="RollingFile" fileName="/opt/logs/S-CHILD.log" filePattern="/opt/logs/S-CHILD-%d{MM-dd-yyyy}-%i.log.gz"> 
+            <!--<RollingFile name="RollingFile" fileName="D:/log/SimC-Logger.log" filePattern="D:/log/SimC-Logger-%d{MM-dd-yyyy}-%i.log.gz">--> 
+            <!-- roll over every second -->
+            <PatternLayout>
+                <Pattern>%d %p %c [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy compressionLevel="0" max="3"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.test.Log4jTest" level="trace">
+            <AppenderRef ref="Console"/>
+            <!--            <AppenderRef ref="File"/>  -->
+        </Logger>
+        <Root level="trace">
+            <AppenderRef ref="Console"/>
+            <!--            <AppenderRef ref="File"/>  -->
+        </Root>
+        <Root level="fatal">
+            <AppenderRef ref="Console"/>
+            <!--            <AppenderRef ref="File"/>  -->
+            <AppenderRef ref="RollingFile"/>  
+        </Root>
+    </Loggers>
+</Configuration>

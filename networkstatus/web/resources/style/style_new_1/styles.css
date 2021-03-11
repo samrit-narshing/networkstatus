@@ -1,0 +1,55 @@
+
+
+/** element defaults **/
+table { font-size:medium;
+        width: 100%;
+        text-align: left;
+
+}
+
+th {
+    padding: 10px 10px;
+}
+
+/*td {
+    padding: 10px 10px;
+}*/
+
+th {
+    color: #fff;
+    background: #48913C url(../images/h4.png) repeat-x scroll center center;
+}
+
+td {
+    font-size:medium;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+
+#tablewithsearchandpagination a {
+    color: #555;
+}
+
+#tablewithsearchandpagination th {
+    cursor:pointer;
+}
+
+#tablewithsearchandpagination div.pull-left
+{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#tablewithsearchandpagination ul.pagination * {
+    margin-top: 	0px;
+    margin-left: 	75px;
+    padding:		0;
+    list-style:		none;
+    line-height:	1.0;
+    float:		left;
+    position:		relative;
+}
+
+

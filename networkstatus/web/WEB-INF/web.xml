@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>FreshProjectSpringMVC</display-name>
+    <context-param>
+        <param-name>PARAMETER_ENCODING</param-name>
+        <param-value>UTF-8</param-value>
+    </context-param>
+    <context-param>
+        <param-name>PROJECT_ROOT_PATH</param-name>
+        <param-value>/networkstatus</param-value>
+    </context-param>
+    <context-param>
+        <param-name>PROJECT_NAME</param-name>
+        <param-value>N.M.S</param-value>
+    </context-param>
+    <context-param>
+        <param-name>PROJECT_TITLE</param-name>
+        <param-value>Network Monitoring System</param-value>
+    </context-param>
+    <session-config>
+        <session-timeout>
+            15
+        </session-timeout>
+    </session-config>
+    <!--        <welcome-file-list>
+        <welcome-file>redirect2.jsp</welcome-file>
+    </welcome-file-list>-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500</location>
+    </error-page>
+    <error-page>
+        <exception-type>org.springframework.web.multipart.MaxUploadSizeExceededException</exception-type>
+        <location>/500_uploadSizeError</location>
+    </error-page>
+</web-app>
